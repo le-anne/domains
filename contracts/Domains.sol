@@ -23,7 +23,8 @@ contract Domains is ERC721URIStorage {
 
     string public tld;
     string constant svgPartOne =
-        '<svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 300 300"><defs><radialGradient id="a" cx="0" cy="0" r=".5" gradientTransform="translate(.5 .5)" gradientUnits="objectBoundingBox" spreadMethod="pad"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#ffcbf7"/></radialGradient></defs><rect width="373.4" height="379" fill="url(#a)" rx="0" ry="0"/><text x="32.5" y="231" font-size="27" fill="#fff" filter="url(#A)" font-family="Plus Jakarta Sans,DejaVu Sans,Noto Color Emoji,Apple Color Emoji,sans-serif" font-weight="bold"></svg>';
+        '<svg xmlns="http://www.w3.org/2000/svg" width="270" height="270" fill="none"><path fill="url(#B)" d="M0 0h270v270H0z"/><defs><filter id="A" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="270" width="270"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".225" width="200%" height="200%"/></filter></defs><defs><linearGradient id="B" x1="0" y1="0" x2="270" y2="270" gradientUnits="userSpaceOnUse"><stop stop-color="#cb5eee"/><stop offset="1" stop-color="#f7dae9" stop-opacity=".99"/></linearGradient></defs><text x="32.5" y="231" font-size="27" fill="#fff" filter="url(#A)" font-family="Plus Jakarta Sans,DejaVu Sans,Noto Color Emoji,Apple Color Emoji,sans-serif" font-weight="bold">';
+
     string constant svgPartTwo = "</text></svg>";
 
     modifier onlyOwner() {
@@ -48,11 +49,11 @@ contract Domains is ERC721URIStorage {
         uint256 len = StringUtils.strlen(name);
         require(len > 0);
         if (len == 3) {
-            return 0 * 10**17; // 5 MATIC = 5 000 000 000 000 000 000 (18 decimals). We're going with 0.5 Matic cause the faucets don't give a lot
+            return 5 * 10**17; // 5 MATIC = 5 000 000 000 000 000 000 (18 decimals). We're going with 0.5 Matic cause the faucets don't give a lot
         } else if (len == 4) {
-            return 0 * 10**17; // To charge smaller amounts, reduce the decimals. This is 0.3
+            return 3 * 10**17; // To charge smaller amounts, reduce the decimals. This is 0.3
         } else {
-            return 0 * 10**17;
+            return 1 * 10**17;
         }
     }
 
