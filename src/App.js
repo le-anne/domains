@@ -402,27 +402,29 @@ const App = () => {
       <div className="container">
         <div className="header-container">
           <header>
-            <div className="left">
-              <p className="title"> LoveMinted</p>
-              <p className="subtitle">
-                Eternalize Your Love Story with Unique NFTs & Domains
-              </p>
-            </div>
-            {/* Display a logo and wallet connection status*/}
-            <div className="right">
-              <img
-                alt="Network logo"
-                className="logo"
-                src={network.includes("Polygon") ? polygonLogo : ethLogo}
-              />
-              {currentAccount ? (
-                <p>
-                  Wallet: {currentAccount.slice(0, 6)}...
-                  {currentAccount.slice(-4)}{" "}
+            <div className="headers">
+              <div className="left">
+                <p className="title"> LoveMinted</p>
+                <p className="subtitle">
+                  Eternalize Your Love Story with Unique NFTs & Domains
                 </p>
-              ) : (
-                <p> Not connected </p>
-              )}
+              </div>
+              {/* Display a logo and wallet connection status*/}
+              <div className="right">
+                <img
+                  alt="Network logo"
+                  className="logo"
+                  src={network.includes("Polygon") ? polygonLogo : ethLogo}
+                />
+                {currentAccount ? (
+                  <p>
+                    Wallet: {currentAccount.slice(0, 6)}...
+                    {currentAccount.slice(-4)}{" "}
+                  </p>
+                ) : (
+                  <p className="connection"> Not connected </p>
+                )}
+              </div>
             </div>
           </header>
         </div>

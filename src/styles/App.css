@@ -409,7 +409,7 @@ input:focus {
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   body {
     height: 100%;
     padding: 0;
@@ -418,6 +418,10 @@ input:focus {
 
   p {
     margin: 0;
+  }
+
+  header {
+    padding: 10px, 10px, 10px;
   }
 
   .container {
@@ -438,23 +442,59 @@ input:focus {
     color: white;
   }
   .title {
-    font-size: 30px;
+    font-size: 50px;
+    text-align: center;
   }
 
   .subtitle {
     font-size: 18px;
+    text-align: center;
   }
 
-  .header-container {
+  .right {
+    height: 13%;
+    text-align: center;
+  }
+
+  div.headers {
+    dispaly: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     padding: 0px;
+    margin: -25px;
+  }
+
+  .couple {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -50px;
+    margin-bottom: 20px;
+    width: 80%;
   }
 
   .cta-button,
   .about-button {
     width: 200px;
   }
+  .logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+  }
+
+  .connection {
+    margin-right: 70px;
+  }
 
   input {
     width: 200px;
+  }
+
+  .footer-container {
+    padding-top: 30px;
   }
 }
