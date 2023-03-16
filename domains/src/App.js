@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./styles/App.css";
-import twitterLogo from "./assets/twitter-logo.svg";
-import { ethers } from "ethers";
+import twitterLogo from "../src/assets/twitter-logo.svg";
+import { providers, utils } from "ethers";
 import contractAbi from "./utils/contractABI.json";
-import polygonLogo from "./assets/polygonlogo.png";
-import ethLogo from "./assets/ethlogo.png";
+import polygonLogo from "../src/assets/polygonlogo.png";
+import ethLogo from "../src/assets/ethlogo.png";
 import { networks } from "./utils/networks.js";
+import favicon from "../src/assets/favicon.ico";
 
 // Constants
 const TWITTER_HANDLE = "leannedotcom";
@@ -257,16 +258,23 @@ const App = () => {
   const renderNotConnectedContainer = () => (
     <div className="connect-wallet-container">
       <img
-        src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTliNGMwNzhlN2IyOWJjMWUwNDQ1YTAwMDVlMDFiYjcwZmNmOGNjZiZjdD1n/EcWcLXiSplrIjCWCzk/giphy.gif"
-        alt="two cats dancing gif"
+        className="couple"
+        src="https://i.ibb.co/WsbbVBj/Untitled-1000-3000-px-2000-2500-px.png"
+        alt="a couple getting married"
       />
       {/* Call the connectWallet function we just wrote when the button is clicked */}
-      <button
-        onClick={connectWallet}
-        className="cta-button connect-wallet-button"
-      >
-        Connect Wallet
-      </button>
+      <div className="buttons">
+        <button
+          onClick={connectWallet}
+          className="cta-button connect-wallet-button"
+        >
+          {" "}
+          <img className="bells" src={favicon} alt="wedding bells" />
+          Connect Wallet
+        </button>
+
+        <button className="about-button"> About </button>
+      </div>
     </div>
   );
 
@@ -396,7 +404,9 @@ const App = () => {
           <header>
             <div className="left">
               <p className="title"> LoveMinted</p>
-              <p className="subtitle">Eternalize Your Love Story with Unique NFTs & Domains</p>
+              <p className="subtitle">
+                Eternalize Your Love Story with Unique NFTs & Domains
+              </p>
             </div>
             {/* Display a logo and wallet connection status*/}
             <div className="right">

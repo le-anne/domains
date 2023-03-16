@@ -23,7 +23,7 @@ contract Domains is ERC721URIStorage {
 
     string public tld;
     string constant svgPartOne =
-        '<svg xmlns="http://www.w3.org/2000/svg" width="270" height="270" fill="none"><path fill="url(#B)" d="M0 0h270v270H0z"/><defs><filter id="A" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="270" width="270"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".225" width="200%" height="200%"/></filter></defs><defs><linearGradient id="B" x1="0" y1="0" x2="270" y2="270" gradientUnits="userSpaceOnUse"><stop stop-color="#cb5eee"/><stop offset="1" stop-color="#f7dae9" stop-opacity=".99"/></linearGradient></defs><text x="32.5" y="231" font-size="27" fill="#fff" filter="url(#A)" font-family="Plus Jakarta Sans,DejaVu Sans,Noto Color Emoji,Apple Color Emoji,sans-serif" font-weight="bold">';
+        '<svg xmlns="http://www.w3.org/2000/svg" width="270" height="270" fill="none"><path fill="url(#B)" d="M0 0h270v270H0z"/><defs><filter id="A" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="270" width="270"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".225" width="200%" height="200%"/></filter></defs><defs><linearGradient id="B" x1="0" y1="0" x2="270" y2="270" gradientUnits="userSpaceOnUse"><stop stop-color="#cb5eee"/><stop offset="1" stop-color="#f7dae9" stop-opacity=".99"/></linearGradient></defs><text x="32.5" y="231" font-size="27" fill="#fff" filter="url(#A)" font-family=""Fira Sans Condensed", Apple Color Emoji,sans-serif" font-weight="bold">';
 
     string constant svgPartTwo = "</text></svg>";
 
@@ -32,10 +32,7 @@ contract Domains is ERC721URIStorage {
         _;
     }
 
-    constructor(string memory _tld)
-        payable
-        ERC721("LoveMinted", "LM")
-    {
+    constructor(string memory _tld) payable ERC721("LoveMinted", "LM") {
         owner = payable(msg.sender);
         tld = _tld;
         console.log("%s name service deployed", _tld);

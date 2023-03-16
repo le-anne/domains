@@ -1,17 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@200;500&display=swap");
+
+:root {
+  font-family: "Fira Sans Condensed", sans-serif;
+  --backgroundpink: #ebdbe1;
+  --buttonpink: #d8bac5;
+  --gray: #2c2c2c;
+}
+
+html {
+  background: var(--gray);
+  background-image: linear-gradient(
+    to right,
+    var(--gray) 0%,
+    #323232 10%,
+    #383738 21%,
+    #383738 48%,
+    #444243 78%,
+    #444243 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+}
+
 .App {
-  height: 100vh;
-  background-color: #0d1116;
+  height: 98vh;
   text-align: center;
   color: white;
+  padding: 35px;
 }
 
 p {
-  margin:0;
+  margin: 0;
 }
 
 .container {
   height: 100%;
-  background-color: #181818;
+  background-color: var(--backgroundpink);
+  background: url("https://i.ibb.co/28DxSkR/Untitled-design-27.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,37 +49,38 @@ p {
   padding-top: 30px;
 }
 
-header{
+header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px 10px 10px 10px;
+  padding: 80px 80px 80px 80px;
 }
 
 .title {
   margin: 0;
-  font-size: 35px;
+  letter-spacing: 0.2rem;
+  font-size: 55px;
   font-weight: bold;
-  color: white;
+  color: var(--gray);
 }
 
 .subtitle {
   font-size: 25px;
-  color: white;
+  color: var(--gray);
 }
 
-.left{
+.left {
   text-align: left;
   margin-left: 10%;
 }
 
-.logo{
+.logo {
   width: 20px;
   height: 20px;
   margin-right: 10px;
 }
 
-.right{
+.right {
   display: flex;
   background: black;
   border-radius: 16px;
@@ -61,19 +90,31 @@ header{
   margin-top: 10px;
 }
 
+.couple {
+  transform: scale(0.8);
+}
+
 .content-container {
-  background-color: #a200d6;
+  background-color: var(--backgroundpink);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -20px;
 }
 
 .cta-button {
   height: 45px;
+  margin-left: 50px;
   border: 0;
-  width: auto;
-  padding-left: 40px;
-  padding-right: 40px;
+  width: 400px;
+  padding-left: 60px;
+  padding-right: 60px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
 }
@@ -82,7 +123,7 @@ header{
   display: flex;
   flex-direction: column;
   margin: auto;
-  max-width: 550px;
+  max-width: 500px;
 }
 
 .connect-wallet-container img {
@@ -90,19 +131,30 @@ header{
 }
 
 .connect-wallet-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background-image: linear-gradient(
     to right,
-    #ff8177 0%,
-    #ff867a 0%,
-    #ff8c7f 21%,
-    #f99185 52%,
-    #cf556c 78%,
-    #b12a5b 100%
+    #ebdbe1 0%,
+    #e2cbd3 10%,
+    #d8bac5 21%,
+    #cfaab7 48%,
+    #c599a9 78%,
+    #9e5771 100%
   );
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
 }
 
+.bells {
+  display: flex;
+  flex-direction: row;
+  width: 45px;
+  height: 30px;
+  padding-top: 15px;
+}
 .mint-button {
   background: -webkit-linear-gradient(left, #a200d6, #ff6fdf);
   font-size: 18px;
@@ -113,19 +165,31 @@ header{
   padding: 0px 2rem;
 }
 
-.mint-button:disabled{
+.mint-button:disabled {
   background: #550072;
   color: rgb(209, 209, 209);
   cursor: not-allowed;
 }
 
-.mint-row{
+.about-button {
+  background: var(--buttonpink);
+  height: 45px;
+  border: 0;
+  width: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.mint-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.edit-button{
+.edit-button {
   border-radius: 50%;
   cursor: pointer;
   margin-left: 3px;
@@ -135,10 +199,9 @@ header{
   background-color: transparent;
 }
 
-.edit-icon{
+.edit-icon {
   width: 12px;
 }
-
 
 .footer-container {
   display: flex;
@@ -153,12 +216,12 @@ header{
 }
 
 .footer-text {
-  color: white;
+  color: var(--gray);
   font-size: 16px;
   font-weight: bold;
 }
 
-.form-container{
+.form-container {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -166,7 +229,7 @@ header{
   align-items: center;
 }
 
-input{
+input {
   border: 0;
   border-radius: 12px;
   background-color: black;
@@ -188,14 +251,13 @@ input:focus {
   outline: none;
 }
 
-.first-row{
+.first-row {
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-
 }
 
 .tld {
@@ -205,7 +267,7 @@ input:focus {
   color: white;
   /* left: -70px; */
   right: 22px;
-  margin: 0;  
+  margin: 0;
   padding: 0;
   margin-bottom: 13px;
 }
@@ -248,16 +310,16 @@ input:focus {
   background-color: lightgreen;
 }
 
-.link{
+.link {
   color: black;
   text-decoration: none;
 }
 
-.underlined{
+.underlined {
   text-decoration: underline;
 }
 
-.underlined:hover{
+.underlined:hover {
   cursor: pointer;
 }
 
@@ -293,5 +355,88 @@ input:focus {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .App {
+    height: 100%;
+    text-align: center;
+    color: white;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  div.left {
+    padding-right: 80px;
+  }
+
+  p.title,
+  p.subtitle {
+    position: relative;
+    margin-left: -20px;
+  }
+
+  .cta-button,
+  .about-button {
+    width: 300px;
+    margin-top: 10px;
+    padding: 0;
+  }
+
+  .cta-button {
+    margin: 0px;
+  }
+
+  .buttons {
+    padding-left: 100px;
+  }
+
+  .couple {
+    margin-top: -100px;
+  }
+
+  input {
+    width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    margin: 0px;
+  }
+
+  .App {
+    height: 100%;
+    text-align: center;
+    color: white;
+  }
+  .title {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .header-container {
+    padding: 0px;
+  }
+
+  .cta-button,
+  .about-button {
+    width: 200px;
+  }
+
+  input {
+    width: 200px;
   }
 }
