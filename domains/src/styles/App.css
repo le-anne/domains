@@ -146,6 +146,7 @@ header {
   );
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
+  margin-bottom: 10px;
 }
 
 .bells {
@@ -410,8 +411,25 @@ input:focus {
 
 @media (max-width: 480px) {
   body {
+    height: 100%;
     padding: 0;
     margin: 0px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .container {
+    height: 100%;
+    background-color: var(--backgroundpink);
+    background: url("https://i.ibb.co/28DxSkR/Untitled-design-27.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .App {
