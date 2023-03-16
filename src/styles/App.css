@@ -23,7 +23,7 @@ html {
 }
 
 .App {
-  height: 98vh;
+  height: 98%;
   text-align: center;
   color: white;
   padding: 35px;
@@ -85,7 +85,7 @@ header {
   background: black;
   border-radius: 16px;
   padding: 12px 20px;
-  height: 99%;
+  height: 39%;
   margin-right: 10%;
   margin-top: 10px;
 }
@@ -409,7 +409,7 @@ input:focus {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
   body {
     height: 100%;
     padding: 0;
@@ -418,10 +418,6 @@ input:focus {
 
   p {
     margin: 0;
-  }
-
-  header {
-    padding: 10px, 10px, 10px;
   }
 
   .container {
@@ -456,14 +452,14 @@ input:focus {
     text-align: center;
   }
 
-  div.headers {
+  .headers {
     dispaly: flex;
     text-align: center;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     padding: 0px;
-    margin: -25px;
+    margin: 0px;
   }
 
   .couple {
@@ -479,6 +475,7 @@ input:focus {
   .about-button {
     width: 200px;
   }
+
   .logo {
     display: block;
     margin-left: auto;
