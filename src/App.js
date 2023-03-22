@@ -258,7 +258,7 @@ const App = () => {
   const renderNotConnectedContainer = () => (
     <div className="connect-wallet-container">
       <img
-        className="couple"
+        className="above-connect-image"
         src="https://i.ibb.co/WsbbVBj/Untitled-1000-3000-px-2000-2500-px.png"
         alt="a couple getting married"
       />
@@ -400,38 +400,38 @@ const App = () => {
   return (
     <div className="App">
       <div className="container">
-        <div className="header-container">
-          <header>
-            <div className="headers">
-              <div className="left">
-                <p className="title"> LoveMinted</p>
-                <p className="subtitle">
-                  Eternalize Your Love Story with Unique NFTs & Domains
-                </p>
-              </div>
-              {/* Display a logo and wallet connection status*/}
-              <div className="right">
-                <img
-                  alt="Network logo"
-                  className="logo"
-                  src={network.includes("Polygon") ? polygonLogo : ethLogo}
-                />
-                {currentAccount ? (
-                  <p>
-                    Wallet: {currentAccount.slice(0, 6)}...
-                    {currentAccount.slice(-4)}{" "}
-                  </p>
-                ) : (
-                  <p className="connection"> Not connected </p>
-                )}
-              </div>
-            </div>
-          </header>
-        </div>
-        {!currentAccount && renderNotConnectedContainer()}
-        {currentAccount && renderInputForm()}
-        {mints && renderMints()}
+        <header>
+          <div className="titles">
+            <p className="title"> LoveMinted</p>
+            <p className="subtitle">
+              Eternalize Your Love Story with Unique NFTs & Domains
+            </p>
+          </div>
+          {/* Display a logo and wallet connection status*/}
 
+          <div className="network-logo">
+            <img
+              alt="Network logo"
+              className="logo"
+              src={network.includes("Polygon") ? polygonLogo : ethLogo}
+            />
+            {currentAccount ? (
+              <p>
+                Wallet: {currentAccount.slice(0, 6)}...
+                {currentAccount.slice(-4)}{" "}
+              </p>
+            ) : (
+              <p className="connection"> Not connected </p>
+            )}
+          </div>
+        </header>
+      </div>
+
+      {!currentAccount && renderNotConnectedContainer()}
+      {currentAccount && renderInputForm()}
+      {mints && renderMints()}
+
+      <div className="footer">
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
           <a
