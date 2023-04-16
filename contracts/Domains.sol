@@ -4,6 +4,7 @@ pragma solidity ^0.8.10;
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 import {Base64} from "./libraries/Base64.sol";
 import {StringUtils} from "./libraries/StringUtils.sol";
@@ -23,7 +24,7 @@ contract Domains is ERC721URIStorage {
 
     string public tld;
     string constant svgPartOne =
-        '<svg xmlns="http://www.w3.org/2000/svg" width="270" height="270" fill="none"><path fill="url(#B)" d="M0 0h270v270H0z"/><defs><filter id="A" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="270" width="270"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".225" width="200%" height="200%"/></filter></defs><defs><linearGradient id="B" x1="0" y1="0" x2="270" y2="270" gradientUnits="userSpaceOnUse"><stop stop-color="#cb5eee"/><stop offset="1" stop-color="#f7dae9" stop-opacity=".99"/></linearGradient></defs><text x="32.5" y="231" font-size="27" fill="#fff" filter="url(#A)" font-family=""Fira Sans Condensed", Apple Color Emoji,sans-serif" font-weight="bold">';
+        '<svg xmlns="http://www.w3.org/2000/svg" width="270" height="270" fill="none"><path fill="url(#B)" d="M0 0h270v270H0z"/><defs><filter id="A" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="270" width="270"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".225" width="200%" height="200%"/></filter></defs><defs><linearGradient id="B" x1="0" y1="0" x2="270" y2="270" gradientUnits="userSpaceOnUse"><stop stop-color="#cb5eee"/><stop offset="1" stop-color="#f7dae9" stop-opacity=".99"/></linearGradient></defs><text x="32.5" y="231" font-size="27" fill="#fff" filter="url(#A)" font-family="sans-serif" font-weight="bold">';
 
     string constant svgPartTwo = "</text></svg>";
 
@@ -46,11 +47,11 @@ contract Domains is ERC721URIStorage {
         uint256 len = StringUtils.strlen(name);
         require(len > 0);
         if (len == 3) {
-            return 5 * 10**17; // 5 MATIC = 5 000 000 000 000 000 000 (18 decimals). We're going with 0.5 Matic cause the faucets don't give a lot
+            return 5 * 10 ** 17; // 5 MATIC = 5 000 000 000 000 000 000 (18 decimals). We're going with 0.5 Matic cause the faucets don't give a lot
         } else if (len == 4) {
-            return 3 * 10**17; // To charge smaller amounts, reduce the decimals. This is 0.3
+            return 3 * 10 ** 17; // To charge smaller amounts, reduce the decimals. This is 0.3
         } else {
-            return 1 * 10**17;
+            return 1 * 10 ** 17;
         }
     }
 
@@ -135,11 +136,9 @@ contract Domains is ERC721URIStorage {
         records[name] = record;
     }
 
-    function getRecord(string calldata name)
-        public
-        view
-        returns (string memory)
-    {
+    function getRecord(
+        string calldata name
+    ) public view returns (string memory) {
         return records[name];
     }
 

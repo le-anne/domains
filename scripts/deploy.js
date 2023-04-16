@@ -1,20 +1,19 @@
 const main = async () => {
   const domainContractFactory = await hre.ethers.getContractFactory("Domains");
-  const domainContract = await domainContractFactory.deploy("schwers");
+  const domainContract = await domainContractFactory.deploy("LoveLoveLove");
   await domainContract.deployed();
 
   console.log("Contract deployed to:", domainContract.address);
 
-  // CHANGE THIS DOMAIN TO SOMETHING ELSE! I don't want to see OpenSea full of bananas lol
   let txn = await domainContract.register("pinky", {
     value: hre.ethers.utils.parseEther("0.1"),
   });
   await txn.wait();
-  console.log("Minted domain pinky.schwers");
+  console.log("Minted domain pinky");
 
   txn = await domainContract.setRecord("pinky", "Pinks!");
   await txn.wait();
-  console.log("Set record for pinky.schwers");
+  console.log("Set record for pinky");
 
   const address = await domainContract.getAddress("pinky");
   console.log("Owner of domain pinky:", address);

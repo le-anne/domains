@@ -6,13 +6,14 @@ import polygonLogo from "../src/assets/polygonlogo.png";
 import ethLogo from "../src/assets/ethlogo.png";
 import { networks } from "./utils/networks.js";
 import favicon from "../src/assets/favicon.ico";
+import { ethers } from "ethers";
 
 // Constants
 const TWITTER_HANDLE = "leannedotcom";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 // Add the domain you will be minting
 const tld = ".LoveLoveLove";
-const CONTRACT_ADDRESS = "0xd7883e3d4968f257ac942717f56d55e9d3729f72";
+const CONTRACT_ADDRESS = "0x5414b7271E1FF8B5125c8b9A286B966AC38d82F9";
 
 const App = () => {
   const [mints, setMints] = useState([]);
@@ -48,7 +49,6 @@ const App = () => {
       const { ethereum } = window;
 
       if (ethereum) {
-        // You know all this
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const contract = new ethers.Contract(
@@ -438,7 +438,7 @@ const App = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built with @${TWITTER_HANDLE}`}</a>
+          >{`built by @${TWITTER_HANDLE}`}</a>
         </div>
       </div>
     </div>
