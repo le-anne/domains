@@ -348,7 +348,7 @@ const App = () => {
         <input
           type="text"
           value={record}
-          placeholder="what is your favorite color?"
+          placeholder="Advice for the happy couple?"
           onChange={(e) => setRecord(e.target.value)}
         />
         {/* If the editing variable is true, return the "Set record" and "Cancel" button */}
@@ -405,7 +405,7 @@ const App = () => {
               <div className="left">
                 <p className="title"> LoveMinted</p>
                 <p className="subtitle">
-                  Eternalize Your Love Story with Unique NFTs & Domains
+                  Eternalize Your Love Story with Unique NFTs
                 </p>
               </div>
               {/* Display a logo and wallet connection status*/}
